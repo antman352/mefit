@@ -1,0 +1,396 @@
+p, h1, h2, h3 {
+	color: #010330;
+}
+.dashboard-container {
+	display: flex;
+	justify-content: center;
+}
+.dashboard-layout-wrapper {
+	margin: 4em 0 0 4em;
+	width: 50em;
+}
+.progress-bar {
+	width: 100%;
+}
+.calendar-logo {
+	font-size: 75px;
+}
+.date-container {
+	display: flex;
+	align-items: baseline;
+}
+.current-date-display {
+	position: relative;
+	height: 4.5em;
+	width: 5.5em;
+}
+.date-wrapper {
+	position: absolute;
+	top: 1.2em;
+	left: 0.8em;
+	font-size: 28px;
+	font-weight: bold;
+}
+.calendar-wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.current-day-header {
+	margin-left: 2.5em;
+	font-size: 18px;
+	font-weight: 500;
+}
+.current-goal-header-wrapper {
+	margin-top: 4em;
+}
+.current-goal-header-wrapper h1 {
+	font-weight: 500;
+	display: inline;
+}
+.current-goal-header-wrapper h1:nth-child(2) {
+	float: right;
+	color: #C83838;
+}
+.divider-line {
+  width: 100%; 
+  text-align: center; 
+  border-bottom: 1px solid #b9b5b5;
+  line-height: 0.1em;
+  margin: 10px 0 20px; 
+} 
+
+
+.goal-start-date {
+	color: #6B6B6B;
+}
+.goal-end-date {
+	color: #6B6B6B;
+}
+.current-goal h3 {
+	font-weight: 500;
+}
+.program-details-wrapper {
+
+}
+.program-details-header-wrapper {
+	display: flex;
+	width: 10em;
+	margin-top: 2em;
+	cursor: pointer;
+}
+.program-details {
+	display: block;
+}
+.expand_more_icon {
+	
+}
+
+.completed-goals-header-wrapper {
+	margin-top: 4em;
+}
+
+.completed-goals-header-wrapper h1 {
+	font-weight: 500;
+	display: inline;
+}
+.completed-goals h3 {
+	font-weight: 500;
+}
+.completed-goal-header {
+	display: flex;
+	cursor: pointer;
+}
+.completed-goal-header h3{
+	font-weight: 500;
+}
+.completed-goal-workouts {
+	display: inline-flex;
+	flex-direction: column;
+}
+.completed-goal-workouts ul {
+	padding-inline: 10px;
+}
+.create-goal-container {
+	
+	height: 20em;
+}
+.create-goal-wrapper {
+	border: 1px solid black;
+	display: flex;
+	height: 100%;
+}
+.create-goal-programs {
+	border-right: 1px solid black;
+	width: 15em;
+	height: 100%;
+}
+.create-goal-programs h3 {
+	font-weight: 500;
+}
+.create-goal-program-active {
+	background-color: green;
+}
+.create-goal-workouts {
+	
+}
+.create-goal-workouts ul {
+	display: inline-flex;
+	list-style-type: none;
+	padding-inline: 0;
+}
+
+.create-goal-exercises {
+	display: flex;
+	flex-direction: column;
+	margin: 0 0 0 1em;
+}
+.create-goal-exercises ul{
+	display: flex;
+	flex-direction: column;
+}
+.show-active-goal-workouts {
+	display: flex;
+	justify-content: space-between;
+	height: auto;
+	border: 1px dotted #010330;
+	padding: 2em;
+}
+.show-active-goal-workouts ul {
+	display: inline-flex;
+	justify-content: space-between;
+	list-style-type: none;
+	padding-inline: 0;
+}
+.show-active-goal-workouts ul li {
+	//margin: 0 2em 0 2em;
+}
+.show-completed-goals-workouts {
+
+}
+
+.show-active-goal-li {
+	margin: 0 2em 0 2em;
+}
+
+.show-completed-goals-workouts ul{
+	display: inline-flex;
+	list-style-type: none;
+	padding-inline: 0;
+}
+.confirm-add-goal-wrapper {
+	margin-top: 5em;
+	display: flex;
+	justify-content: flex-end;
+}
+.confirm-add-goal-btn {
+	height: 3em;
+	width: 8em;
+	margin-top: 10px;
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.end-date-input {
+	width: 15em;
+}
+.complete-goal-container {
+	display: flex;
+	justify-content: center;
+}
+.complete-goal-btn {
+	height: 3em;
+	width: 8em;
+	margin-top: 10px;
+	background-color: green;
+	color: white;
+	font-weight: bold;
+	border-radius: 5px;
+}
+.create-goal-headers {
+	display: flex;
+	justify-content: space-between;
+	margin-right: 18em;
+}
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700);
+.pricing-table {
+  position: relative;
+  display: block;
+  margin: 0 5px;
+  float: left;
+  width: 150px;
+	height: 30em;
+  background: #ffffff;
+  font-family: Roboto, Helvetica, sans-serif;
+  text-align: center;
+}
+.completed-pricing-table {
+  position: relative;
+  display: block;
+  margin: 0 5px;
+  float: left;
+  width: 150px;
+	height: 25em;
+  background: #ffffff;
+  font-family: Roboto, Helvetica, sans-serif;
+  text-align: center;
+}
+.pricing-table div {
+	position: absolute;
+	bottom: 0;
+	left: 1.5em;
+}
+.completed-pricing-table div {
+	position: absolute;
+	bottom: 0;
+	left: 1.5em;
+}
+.basic {
+  border-top: 3px solid #56ca7c;
+  border-bottom: 3px solid #56ca7c;
+}
+.standard {
+  border-top: 3px solid #5f5fa7;
+  border-bottom: 3px solid #5f5fa7;
+}
+.premium {
+  border-top: 3px solid #0e83cd;
+  border-bottom: 3px solid #0e83cd;
+}
+.pricing-table span {
+  display: block;
+}
+.completed-pricing-table span {
+  display: block;
+}
+.table-head {
+  padding: 25px 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+.basic .table-head {
+  color: #56ca7c;
+}
+.standard .table-head {
+  color: #5f5fa7;
+}
+.premium .table-head {
+  color: #0e83cd;
+}
+.price {
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffffff;
+}
+.basic .price {
+  background: #56ca7c;
+}
+.standard .price {
+  background: #5f5fa7;
+}
+.premium .price {
+  background: #0e83cd;
+}
+.table-row {
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+}
+.table-row:nth-child(2n) {
+  background: #f7f7f7;
+}
+.purchase {
+  padding: 35px 0;
+}
+a.buy {
+  position: relative;
+  display: inline-block;
+  z-index: 5;
+  padding: 7px 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  -webkit-transition: color .2s ease, background .5s ease;
+  -o-transition: color .2s ease, background .5s ease;
+  transition: color .2s ease, background .5s ease;
+  overflow: hidden;
+}
+.basic a.buy {
+  border: 2px solid #56ca7c;
+  color: #56ca7c;
+}
+.standard a.buy {
+  border: 2px solid #5f5fa7;
+  color: #5f5fa7;
+}
+.premium a.buy {
+  border: 2px solid #0e83cd;
+  color: #0e83cd;
+}
+a.buy:hover {
+  color: #ffffff;
+}
+.basic a.buy:hover {
+  background: #56ca7c;
+}
+.standard a.buy:hover {
+  background: #5f5fa7;
+}
+.premium a.buy:hover {
+  background: #0e83cd;
+}
+a.buy:after {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: 0;
+  content: '';
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.basic a.buy:after {
+  background: #56ca7c;
+}
+.standard a.buy:after {
+  background: #5f5fa7;
+}
+.premium a.buy:after {
+  background: #0e83cd;
+}
+a.buy:hover:after {
+  height: 100%;
+}
+
+.checker {
+	position: absolute;
+	bottom: 0.5em;
+	left: 2.5em;
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) { 
+	
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { 
+	
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { 
+	
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { 
+	
+}

@@ -1,0 +1,145 @@
+<div class="profile-container">
+
+	<svg width="978" height="827" viewBox="0 0 978 827" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M977.5 413.5C977.5 641.518 758.873 826.5 489 826.5C219.127 826.5 0.5 641.518 0.5 413.5C0.5 185.482 219.127 0.5 489 0.5C758.873 0.5 977.5 185.482 977.5 413.5Z" stroke="white" stroke-opacity="0.1"/>
+		<path d="M922.5 404.5C922.5 601.584 730.52 761.5 493.5 761.5C256.48 761.5 64.5 601.584 64.5 404.5C64.5 207.416 256.48 47.5 493.5 47.5C730.52 47.5 922.5 207.416 922.5 404.5Z" stroke="white" stroke-opacity="0.25"/>
+		<path d="M868.5 406C868.5 570.757 700.719 704.5 493.5 704.5C286.281 704.5 118.5 570.757 118.5 406C118.5 241.243 286.281 107.5 493.5 107.5C700.719 107.5 868.5 241.243 868.5 406Z" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="181" cy="240" r="5" fill="#4890DE"/>
+		<circle cx="181" cy="240" r="4.5" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="256" cy="637" r="5" fill="#7E8DBE"/>
+		<circle cx="256" cy="637" r="4.5" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="104" cy="555" r="4" fill="#758EC4"/>
+		<circle cx="104" cy="555" r="3.5" stroke="white" stroke-opacity="0.25"/>
+		<circle cx="76" cy="322" r="4" fill="#5590D7"/>
+		<circle cx="76" cy="322" r="3.5" stroke="white" stroke-opacity="0.25"/>
+	</svg>
+
+<div class="profile-wrapper">
+
+	<div class="header-text-wrapper">
+		<h2>Register profile</h2>
+	</div>
+		
+	<form 
+		(ngSubmit)="registerProfile();"
+		#profileForm="ngForm"
+		class="profile-form"
+		novalidate
+		>
+		<mat-form-field class="profile-form-input" appearance="fill">
+			<mat-label>Height</mat-label>
+			<input 
+				#height="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.height"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="height"
+				placeholder="180cm"
+				minlength="3"
+				required
+				pattern="^[0-9]+$"
+				>
+				<div 
+					*ngIf="height.invalid && (height.dirty || height.touched)"
+    			class="profile-form-error"
+					>
+					<div *ngIf="height.errors?.minlength">
+						Your height must be at least 3 characters long.
+					</div>
+					<div *ngIf="height.errors?.pattern">
+						Height must contain only digits.
+					</div>
+					<div *ngIf="height.errors?.required">
+						Height is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<mat-form-field class="profile-form-input" appearance="fill">
+			<mat-label>Weight</mat-label>
+			<input 
+				#weight="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.weight"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="weight"
+				placeholder="75kg"
+				required
+				pattern="^[0-9]+$"
+				>
+				<div 
+					*ngIf="weight.invalid && (weight.dirty || weight.touched)"
+    			class="profile-form-error"
+					>
+					<div *ngIf="weight.errors?.minlength">
+						Your weight must be at least 2 characters long.
+					</div>
+					<div *ngIf="weight.errors?.pattern">
+						Weight must contain only digits.
+					</div>
+					<div *ngIf="weight.errors?.required">
+						Weight is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<mat-form-field class="profile-form-input" appearance="fill">
+			<mat-label>Disabilities</mat-label>
+			<input 
+				#disabilities="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.disabilities"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="disabilities"
+				placeholder="Eg.. no stronk"
+				required
+				>
+				<div 
+					*ngIf="disabilities.valid && (disabilities.dirty || disabilities.touched)"
+    			class="profile-form-error"
+					>
+					<div *ngIf="disabilities.errors?.disabilities">
+						Enter a valid disabilities.
+					</div>
+					<div *ngIf="disabilities.errors?.required">
+						Disabilities is required.
+					</div>
+				</div>
+		</mat-form-field>
+	
+		<mat-form-field class="profile-form-input" appearance="fill">
+			<mat-label>Medical conditions</mat-label>
+			<input 
+				#medicalConditions="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.medicalConditions"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="medicalConditions"
+				required
+				>
+				<div 
+					*ngIf="medicalConditions.valid && (medicalConditions.dirty || medicalConditions.touched)"
+    			class="profile-form-error"
+					>
+					<div *ngIf="medicalConditions.errors?.required">
+						Medical conditions is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<button 
+			mat-raised-button 
+			type="submit"
+			class="register-btn" 
+			color="primary"
+			[disabled]="!profileForm.valid"
+			>
+			Register profile
+		</button>
+		<span *ngIf="error" class="profile-form-error"> {{ error }}</span>
+	</form>
+
+	
+</div>
+</div>

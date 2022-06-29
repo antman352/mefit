@@ -1,0 +1,34 @@
+<div class="program-container">
+    <div class="workouts-container">
+        <div>
+            <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+                <ng-container matColumnDef="{{column}}" *ngFor="let column of displayedColumns; index as i">
+                    <th mat-header-cell *matHeaderCellDef> {{column}}</th>
+                    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+                </ng-container>
+
+                <ng-container matColumnDef="expandedDetail">
+                    <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumns.length">
+                        <div class="example-element-detail"
+                            [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+                            <div class="example-element-description"
+                                *ngFor="let workout of element.workouts; index as i">
+                                <h4>Workout {{i+1}}</h4>
+                                {{workout.name}} <br>
+                                {{workout.category}}
+                            </div>
+                        </div>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let element; columns: displayedColumns;" class="example-element-row"
+                    [class.example-expanded-row]="expandedElement === element"
+                    (click)="expandedElement = expandedElement === element ? null : element">
+                </tr>
+                <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+            </table>
+
+        </div>
+    </div>
+</div>

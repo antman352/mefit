@@ -1,0 +1,173 @@
+<div class="signup-container">
+
+	<svg width="978" height="827" viewBox="0 0 978 827" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path d="M977.5 413.5C977.5 641.518 758.873 826.5 489 826.5C219.127 826.5 0.5 641.518 0.5 413.5C0.5 185.482 219.127 0.5 489 0.5C758.873 0.5 977.5 185.482 977.5 413.5Z" stroke="white" stroke-opacity="0.1"/>
+		<path d="M922.5 404.5C922.5 601.584 730.52 761.5 493.5 761.5C256.48 761.5 64.5 601.584 64.5 404.5C64.5 207.416 256.48 47.5 493.5 47.5C730.52 47.5 922.5 207.416 922.5 404.5Z" stroke="white" stroke-opacity="0.25"/>
+		<path d="M868.5 406C868.5 570.757 700.719 704.5 493.5 704.5C286.281 704.5 118.5 570.757 118.5 406C118.5 241.243 286.281 107.5 493.5 107.5C700.719 107.5 868.5 241.243 868.5 406Z" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="181" cy="240" r="5" fill="#4890DE"/>
+		<circle cx="181" cy="240" r="4.5" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="256" cy="637" r="5" fill="#7E8DBE"/>
+		<circle cx="256" cy="637" r="4.5" stroke="white" stroke-opacity="0.4"/>
+		<circle cx="104" cy="555" r="4" fill="#758EC4"/>
+		<circle cx="104" cy="555" r="3.5" stroke="white" stroke-opacity="0.25"/>
+		<circle cx="76" cy="322" r="4" fill="#5590D7"/>
+		<circle cx="76" cy="322" r="3.5" stroke="white" stroke-opacity="0.25"/>
+	</svg>
+
+<div class="signup-wrapper">
+
+	<div class="header-text-wrapper">
+		<h2>Registration</h2>
+	</div>
+		
+	<form 
+		(ngSubmit)="registerUser();"
+		#registerForm="ngForm"
+		class="signup-form"
+		novalidate
+		>
+		<mat-form-field class="signup-form-input" appearance="fill">
+			<mat-label>Firstname</mat-label>
+			<input 
+				#firstname="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.firstName"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="firstname"
+				placeholder="John"
+				minlength="2"
+				required
+				pattern="^[a-zA-Z]+$"
+				>
+				<div 
+					*ngIf="firstname.invalid && (firstname.dirty || firstname.touched)"
+    			class="signup-form-error"
+					>
+					<div *ngIf="firstname.errors?.minlength">
+						Firstname must be at least 2 characters long.
+					</div>
+					<div *ngIf="firstname.errors?.pattern">
+						Firstname must contain only letters.
+					</div>
+					<div *ngIf="firstname.errors?.required">
+						Firstname is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<mat-form-field class="signup-form-input" appearance="fill">
+			<mat-label>Lastname</mat-label>
+			<input 
+				#lastname="ngModel"
+				type="text"
+				matInput
+				[(ngModel)]="model.lastName"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="lastname"
+				placeholder="Doe"
+				minlength="2"
+				required
+				pattern="^[a-zA-Z]+$"
+				>
+				<div 
+					*ngIf="lastname.invalid && (lastname.dirty || lastname.touched)"
+    			class="signup-form-error"
+					>
+					<div *ngIf="lastname.errors?.minlength">
+						Lastnmame must be at least 2 characters long.
+					</div>
+					<div *ngIf="lastname.errors?.pattern">
+						Lastname must contain only letters.
+					</div>
+					<div *ngIf="lastname.errors?.required">
+						Lastname is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<mat-form-field class="signup-form-input" appearance="fill">
+			<mat-label>Email</mat-label>
+			<input 
+				#email="ngModel"
+				type="email"
+				matInput
+				[(ngModel)]="model.email"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="email"
+				placeholder="johndoe@example.com"
+				required
+				email
+				>
+				<div 
+					*ngIf="email.invalid && (email.dirty || email.touched)"
+    			class="signup-form-error"
+					>
+					<div *ngIf="email.errors?.email">
+						Enter a valid email.
+					</div>
+					<div *ngIf="email.errors?.required">
+						Email is required.
+					</div>
+				</div>
+		</mat-form-field>
+	
+		<mat-form-field class="signup-form-input" appearance="fill">
+			<mat-label>Password</mat-label>
+			<input 
+				#password="ngModel"
+				type="password"
+				matInput
+				[(ngModel)]="model.password"
+				[ngModelOptions]="{updateOn: 'blur'}"
+				name="password"
+				required
+				minlength="6"
+				>
+				<div 
+					*ngIf="password.invalid && (password.dirty || password.touched)"
+    			class="signup-form-error"
+					>
+					<div *ngIf="password.errors?.minlength">
+						Password must contain 6 or more characters.
+					</div>
+					<div *ngIf="password.errors?.required">
+						Password is required.
+					</div>
+				</div>
+		</mat-form-field>
+		<mat-form-field class="signup-form-input" appearance="fill">
+			<mat-label>Confirm password</mat-label>
+			<input 
+				type="password"
+				matInput
+				[(ngModel)]="confirmPassword"
+				name="confirmPassword"
+				required
+				>
+		</mat-form-field>
+	
+		<button 
+			mat-raised-button 
+			type="submit"
+			class="signup-btn" 
+			color="primary"
+			[disabled]="!registerForm.valid"
+			>
+			Register
+		</button>
+		<span *ngIf="error" class="signup-form-error"> {{ error }}</span>
+	</form>
+
+	<div class="existing-account-container">
+		<p
+			class="existing-account-text"
+			>Already have an account?</p>
+		<button 
+			class="goto-login-btn"
+			color="primary"
+			(click)="redirectLogin()"
+			>
+			Log in
+		</button>
+	</div>
+</div>
+</div>

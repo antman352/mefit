@@ -1,0 +1,49 @@
+.logo {
+	margin: 0 0 10px 1.6em;
+}
+
+.mat-toolbar {
+	width: 100%;
+	height: 4em;
+	overflow: hidden;
+	justify-content: space-between;
+	align-items: flex-end;
+	background: linear-gradient(180deg, #3083DC 0%, rgba(248, 255, 229, 0.97) 100%);
+}
+
+span {
+	padding-right: 1rem;
+}
+
+.user-text {
+	font-size: 8pt;
+}
+.user-icon {
+	font-size: 36px;
+}
+.nav-user-profile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 3.2em;
+}
+.nav-user-controls {
+	display: flex;
+}
+.nav-item {
+	margin: 0 1em 0 1em;
+}
+.nav-logout-btn a, .nav-item span a {
+	font-size: 14px;
+	text-decoration: none;
+	color: #010330;
+}
+.nav-item span a:hover, .nav-logout-btn a:hover {
+	color: rgb(237, 238, 241);
+}
+.nav-links {
+	display: flex;
+	position: relative;
+	width: 40em;
+	justify-content: flex-start;
+}

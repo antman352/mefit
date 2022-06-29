@@ -1,0 +1,66 @@
+.profile-container {
+	background: linear-gradient(rgba(48, 131, 220, 1), rgba(48, 131, 220, 0.84) 15%,rgba(78, 65, 135, 0.5));
+	height: 100%;
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+
+.profile-wrapper {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: rgb(235, 234, 231);
+	height: 50em;
+	width: 35em;
+	top: 5em;
+}
+.header-text-wrapper {
+  margin: 3em 0 3em 0;
+  color: #010330;
+}
+.divider-line {
+	width: 80%; 
+	text-align: center; 
+	border-bottom: 1px solid #b9b5b5;
+	line-height: 0.1em;
+	margin: 0.5em 0 1.5em 0;
+} 
+.goto-login-btn {
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  background-color: rgb(235, 234, 231);
+  color: #010330;
+}
+.divider-text { 
+	color: #969191;
+	background:rgb(235, 234, 231); 
+	padding:0 10px; 
+}
+.profile-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 200px;
+	max-width: 300px;
+	width: 100%;
+}
+.profile-form-input {
+  width: 100%;
+}
+.register-btn {
+	width: 300px;
+	height: 36px;
+	font-size: 16px;
+	color: rgb(235, 234, 231);
+	background: linear-gradient(89.14deg, #3083DC 0%, rgba(78, 65, 135, 0.76) 87.29%);
+	border-radius: 3px;
+	border: none;
+	margin-top: 1.5em;
+}
+.profile-form-error {
+	margin-top: 1em;
+	color: red;
+}

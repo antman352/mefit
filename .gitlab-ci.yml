@@ -1,0 +1,37 @@
+variables:
+  TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+  TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
+  IMAGE_KEYCLOAK: jboss/keycloak
+  IMAGE_ANGULAR: 16-alpine3.11
+  IMAGE_SPRING: tomcat:jdk16-openjdk-slim
+
+stages:
+  - build
+  - deploy
+
+build-angular:
+  stage: build
+  script:
+    - echo "Building Angular"
+
+build-spring:
+  stage: build
+  script:
+    - echo "Building Spring Boot"
+
+deploy-keycloak:
+  image: alpine:latest
+  stage: deploy
+  tags:
+    - deployment
+  script:
+    - chmod og= $ID_RSA
+    - apk update && apk add openssh-client
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run $IMAGE_KEYCLOAK -d -p 80:80"
+    - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker run -e KEYCLOAK_USER=$KEYCLOAK_USER -e KEYCLOAK_PASSWORD=$KEYCLOAK_PASSWORD $IMAGE_KEYCLOAK"
+  environment:
+    name: production
+    url: http://134.122.86.61
+  only:
+    - master
+

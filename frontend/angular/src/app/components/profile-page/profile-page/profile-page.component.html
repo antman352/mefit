@@ -1,0 +1,49 @@
+<div class="profile-page-container">
+    <div class="content">
+        <form #updateProfileForm="ngForm" (ngSumit)="onSubmit(updateProfileForm.value)" class="update-profile-container">
+            <div class="profile-page-header">
+                <h3>Profile</h3>
+            </div>
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="email">Email:</label>
+                    <input type="text" matInput [(ngModel)]="email" name="email">
+                </mat-form-field>
+            </div>
+            
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="password">Password:</label>
+                    <input type="password" matInput [(ngModel)]="password" name="password">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="weight">Weight:</label>
+                    <input type="text" matInput [(ngModel)]="weight" name="weight">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="height">Height:</label>
+                    <input type="text" matInput [(ngModel)]="height" name="height">
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="medical_conditions">Medical conditions:</label>
+                    <input type="text" matInput [(ngModel)]="medical_conditions" name="medical_conditions">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="form-input" appearance="fill">
+                    <label for="disabilities">Disabilities:</label>
+                    <input type="text" matInput [(ngModel)]="disabilities" name="disabilities">
+                </mat-form-field>
+            </div>
+        </form>
+    </div>
+</div>

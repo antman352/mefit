@@ -1,0 +1,31 @@
+<div class="goal-container">
+    <div goal-header>
+        <h3>You don't have an active goal this week.<br>Choose a program to get started.</h3>
+    </div>
+
+    <div class="goal-content">
+        <form 
+        (ngSubmit)="addGoal(goalForm.value)"
+        #goalForm="ngForm"
+        class="goal-form"
+        >
+        <mat-form-field class="goal-form-input" appearance="fill">
+            <input 
+                type="text"
+                matInput
+                [(ngModel)]="endDate"
+                name="endDate"
+                placeholder="End date for this goal:"
+                >
+        </mat-form-field>
+        <button 
+				mat-raised-button 
+				type="submit"
+				class="goal-btn" 
+				color="primary"
+				>
+				Add goal
+			</button>
+        </form>
+    </div>
+</div>

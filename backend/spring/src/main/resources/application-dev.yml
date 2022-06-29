@@ -1,0 +1,82 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mefit_db_dev
+    username: postgres
+    password: postgres
+
+springdoc:
+  api-docs:
+    path: /v1/docs
+  swagger-ui:
+    path: /v1/docs/index.html
+    operationsSorter: method
+
+security:
+  firebase-props:
+    database-url: https://mefit-27cb9.firebaseapp.com
+    enable-strict-server-session: false
+    enable-check-session-revoked: false
+    enable-logout-everywhere: false
+    session-expiry-in-days: 5
+  cookie-props:
+    max-age-in-minutes: 7200
+    http-only: false
+    secure: false
+    domain: localhost
+    path: /
+  allow-credentials: true
+  allowed-origins:
+    - http://localhost:4200
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
+  allowed-headers:
+    - Authorization
+    - Origin
+    - Content-Type
+    - Accept
+    - Accept-Encoding
+    - Accept-Language
+    - Access-Control-Allow-Origin
+    - Access-Control-Allow-Headers
+    - Access-Control-Request-Method
+    - X-Requested-With
+    - X-Auth-Token
+    - X-Xsrf-Token
+    - Cache-Control
+    - Id-Token
+  exposed-headers:
+    - X-Xsrf-Token
+  allowed-public-apis:
+    - /favicon.ico
+    - /session/login
+    - /public/*
+    - /test/**
+  valid-application-roles:
+    - ROLE_SUPER
+    - ROLE_ADMIN
+    - ROLE_CONTRIBUTOR
+    - ROLE_USER
+  super-admins:
+    - mjovanc@protonmail.com
+  test:
+    login:
+      enabled: true
+
+logging:
+  level:
+    root: WARN
+    org:
+      springframework:
+        web: DEBUG
+      hibernate: ERROR
+    io:
+      thepro: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss} || %highlight(%5p) < %highlight(%-35.35logger{35}) > %highlight(%m%n)"

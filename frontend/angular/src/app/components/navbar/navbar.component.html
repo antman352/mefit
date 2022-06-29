@@ -1,0 +1,45 @@
+<mat-toolbar>
+	<div class="logo">
+		<div class="mefit-logo">
+			<svg width="134" height="50" viewBox="0 0 134 50" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+				<rect width="50" height="50" fill="url(#pattern0)"/>
+				<path d="M51.2 27.67L52.13 25.84H56.6V27.13L56.87 27.31C57.09 27.11 57.39 26.88 57.77 26.62C58.17 26.34 58.65 26.09 59.21 25.87C59.77 25.65 60.4 25.54 61.1 25.54C63.18 25.54 64.67 26.23 65.57 27.61C65.93 27.11 66.47 26.64 67.19 26.2C67.93 25.74 68.95 25.51 70.25 25.51C72.05 25.51 73.4 26.02 74.3 27.04C75.2 28.06 75.65 29.49 75.65 31.33V35.17L76.28 38.17L75.65 40H70.25V32.11C70.25 31.35 70.08 30.77 69.74 30.37C69.42 29.95 68.91 29.74 68.21 29.74C67.75 29.74 67.35 29.91 67.01 30.25C66.67 30.59 66.5 31.02 66.5 31.54V40H61.1V32.14C61.1 31.38 60.93 30.8 60.59 30.4C60.27 29.98 59.76 29.77 59.06 29.77L57.2 30.34V40H51.8V30.97L51.2 27.67ZM86.1805 40.3C84.6405 40.3 83.2705 40.07 82.0705 39.61C80.8705 39.15 79.9305 38.38 79.2505 37.3C78.5705 36.22 78.2305 34.76 78.2305 32.92C78.2305 31.6 78.4505 30.47 78.8905 29.53C79.3505 28.59 79.9605 27.83 80.7205 27.25C81.4805 26.65 82.3305 26.22 83.2705 25.96C84.2105 25.68 85.1805 25.54 86.1805 25.54C87.9005 25.54 89.2205 25.71 90.1405 26.05C91.0805 26.39 91.7005 26.66 92.0005 26.86L93.5005 31.63L92.9005 33.49H83.6005C83.7405 34.23 84.1105 34.85 84.7105 35.35C85.3105 35.85 86.3005 36.1 87.6805 36.1C88.7605 36.1 89.6905 35.98 90.4705 35.74C91.2505 35.5 91.8605 35.29 92.3005 35.11V39.13C91.7005 39.45 90.8305 39.73 89.6905 39.97C88.5705 40.19 87.4005 40.3 86.1805 40.3ZM83.6305 31.57L87.7705 30.97L87.5005 29.68C87.3605 29.6 87.1505 29.54 86.8705 29.5C86.6105 29.46 86.3805 29.44 86.1805 29.44C85.6205 29.44 85.1505 29.56 84.7705 29.8C84.4105 30.04 84.1305 30.33 83.9305 30.67C83.7505 30.99 83.6505 31.29 83.6305 31.57ZM96.609 40V23.62L96.009 20.56L96.609 18.76H111.459L112.959 19.66L110.979 23.86L108.279 23.56H101.709L102.009 26.86H110.079V31.51H106.449L102.009 31.21V35.23L102.339 38.23L102.009 40H96.609ZM117.635 24.97L113.825 21.13L117.635 17.32L121.445 21.13L117.635 24.97ZM114.935 40V30.07L114.305 27.67L114.905 25.84H120.335V40H114.935ZM128.885 40.3C127.525 40.3 126.435 39.9 125.615 39.1C124.795 38.3 124.385 37.29 124.385 36.07V29.53H122.195V26.68L124.085 25.21L126.215 21.49H129.755V25.84H133.955V29.74H129.755V36.16L133.955 36.13V39.4C133.955 39.4 133.715 39.48 133.235 39.64C132.775 39.78 132.165 39.92 131.405 40.06C130.645 40.22 129.805 40.3 128.885 40.3Z" fill="black"/>
+				<defs>
+				<pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+				<use xlink:href="#image0" transform="scale(0.0333333)"/>
+				</pattern>
+				<image id="image0" width="30" height="30" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABmJLR0QA/wD/AP+gvaeTAAAAd0lEQVRIie2WUQrAIAxD49j9L7XtXO43aNXJqhu2D/zRkkJCVcBxrHEBiLRacO1RKwwPhIbUbw2hYXBjtlWbzP6QHKb7WlZn2r+weio7+jLVyD8CFq3+NOPS6Ej0jlNRw57V3Pic0E+8MiXWfp0k3thf/Qg4znrc+FMdNr9XODkAAAAASUVORK5CYII="/>
+				</defs>
+			</svg>
+		</div>
+		
+	</div>
+	<div class="nav-links">
+		<div class="nav-item">
+			<span><a routerLink="/dashboard">Dashboard</a></span>
+		</div>
+		<!-- <div class="nav-item">
+			<span><a routerLink="/profile">Profile</a></span>
+		</div> -->
+		<div class="nav-item" *ngIf="isContributor">
+			<span><a routerLink="/">Contributors area</a></span>
+		</div>
+		<div class="nav-item" *ngIf="isAdmin">
+			<span><a routerLink="/">Admin area</a></span>
+		</div>
+		<div class="nav-item nav-logout-btn">
+			<a href="#" (click)="logoutUser()">Log out</a>
+		</div>
+	</div>
+	
+	<div class="nav-user-controls">
+		<div class="nav-user-profile" *ngIf="loginService.userData as user">
+			<span class="user-icon material-icons">
+				account_circle
+			</span>
+			<p class="user-text">{{ user.email }}</p>
+		</div>
+		
+	</div>
+	
+</mat-toolbar>

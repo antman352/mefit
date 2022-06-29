@@ -1,0 +1,3 @@
+<app-navbar *ngIf="isLoggedIn && router.url !== '/registerprofile'"></app-navbar>
+<app-sidebar *ngIf="isLoggedIn && router.url !== '/registerprofile'"></app-sidebar>
+<router-outlet></router-outlet>
